@@ -9,6 +9,7 @@ import {
 
 import { CreatePokemonDto, UpdatePokemonDto } from './dto';
 import { Pokemon } from './entities';
+import { PaginationDto } from 'src/common/dto';
 
 @Injectable()
 export class PokemonService {
@@ -30,8 +31,11 @@ export class PokemonService {
     }
   }
 
-  async findAll() {
+  async findAll({ limit, offset }: PaginationDto) {
     return await this.pokemonModel.find()
+      .limit(limit)
+      .skip(offset)
+      .sort({ no: 1 })
   }
 
   async findOne(term: string) {
