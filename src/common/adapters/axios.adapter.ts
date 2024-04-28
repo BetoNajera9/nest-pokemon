@@ -5,10 +5,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AxiosAdapter implements HttpAdapter {
-  constructor(
-    private readonly httpService: HttpService
-  ) {
-  }
+  constructor(private readonly httpService: HttpService) {}
 
   async get<T>(url: string): Promise<T> {
     try {
@@ -18,8 +15,7 @@ export class AxiosAdapter implements HttpAdapter {
     } catch (error) {
       console.log('🚀 ~ AxiosAdapter ~ error:', error);
 
-      throw new Error("This is an error - Check logs");
-
+      throw new Error('This is an error - Check logs');
     }
   }
 }

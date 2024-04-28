@@ -11,4 +11,4 @@ import { CommonModule } from 'src/common/common.module';
   controllers: [SeedController],
   providers: [SeedService],
 })
-export class SeedModule { }
+export class SeedModule {}
