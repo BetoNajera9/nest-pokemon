@@ -6,6 +6,6 @@ import { HttpModule } from '@nestjs/axios';
 @Module({
   imports: [HttpModule],
   providers: [AxiosAdapter],
-  exports: [AxiosAdapter]
+  exports: [AxiosAdapter],
 })
-export class CommonModule { }
+export class CommonModule {}
